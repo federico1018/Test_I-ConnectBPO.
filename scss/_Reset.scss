@@ -1,0 +1,55 @@
+@import "variables";
+/***********Reseteo global de etiquetas, no uso normalize. Intento ser minimalista y usar CSS puro.****************/
+html {
+  box-sizing: border-box;
+  font-family: "Alata", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  min-width: 280px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: map-get($colores, "bg-primary");
+}
+img {
+  object-fit: cover;
+}
+img,
+audio,
+video,
+iframe,
+canvas,
+svg,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}

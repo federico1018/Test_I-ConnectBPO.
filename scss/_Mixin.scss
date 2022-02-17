@@ -1,0 +1,16 @@
+/*MIXIN, una gran funcionalidad de SCSS/SASS.*/
+
+//Mixin FLEX-BOX.
+@mixin flex($direction: column, $just: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+}
+
+//Mixin GRID.
+@mixin grid($columnas, $espacio) {
+  display: grid;
+  grid-template-columns: ($columnas, 1fr);
+  gap: $espacio;
+}

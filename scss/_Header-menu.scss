@@ -1,0 +1,107 @@
+/*********************************HEADER, LOGO-MENU Y MENU-BTN RESPONSIVE*********************/
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  padding: 1.5rem;
+  width: 100%;
+  background-color: map-get($colores, "bg-primary");
+  //Container LOGO/NAV
+  .container {
+    @include flex($direction: row, $just: space-between);
+    //Logo
+    .logo {
+      margin-top: -7px;
+      font-family: "Oleo Script", cursive;
+      &__text {
+        color: map-get($colores, "color-logo");
+        font-size: var(--step-4);
+        text-decoration: none;
+      }
+    }
+    //Menu Mobile/Hamburguesa
+    .menu-btn {
+      outline: thin solid gray;
+      border: 0;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      background-color: map-get($colores, "color-logo");
+    }
+    //Menu MOBILE-FIRST
+    .menu {
+      position: fixed;
+      left: 0;
+      top: 5rem;
+      width: 100%;
+      @include flex();
+      background-color: map-get($colores, "bg-primary");
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      &__enlace {
+        display: inline;
+        position: relative;
+        width: 40%;
+        margin: 0 auto;
+        padding: 1rem;
+        font-size: var(--step--1);
+        font-weight: bold;
+        text-align: center;
+        color: map-get($colores, "text-color");
+        //Animación Nav
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 0;
+          height: 5px;
+          background-color: map-get($colores, "text-color");
+          transition: width 800ms 300ms;
+          -webkit-transition: width 800ms ease-out;
+          -moz-transition: width 800ms ease-out;
+          -ms-transition: width 800ms ease-out;
+          -o-transition: width 8500ms ease-out;
+          animation: border 4s linear infinite alternate;
+        }
+        &:hover::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+      .anim-bottom:hover::after {
+        width: 100%;
+      }
+      .to-left::after {
+        left: 0;
+      }
+    }
+    .is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+//MediaQuerie MENU DEKTOP.
+@media screen and (min-width: 64em) {
+  .header {
+    .container {
+      .menu-btn {
+        display: none;
+      }
+      .menu {
+        position: static;
+        max-width: 700px;
+        @include flex($direction: row);
+        opacity: 1;
+        pointer-events: auto;
+        &__enlace {
+          width: auto;
+          padding: 8px;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
