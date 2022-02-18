@@ -15,11 +15,11 @@ Debes clonar el repositorio a tu computadora, ya que no desplegue este sitio web
 
 <h2>Elaboración :hammer:</h2>
 
-En cuanto a la programación de esta pagiina no utilice Frameworks, la verdad no domino ninguno, necesito aprender bien Javascript para empezar React o Angular, sim embargo, utilice la trinidad de la web las cuales son.
+En cuanto a la programación de esta pagiina no utilice Frameworks, la verdad no domino ninguno, necesito aprender bien Javascript para empezar React o Angular, sin embargo, utilice la trinidad de la web las cuales son:
 
 - HTML :sparkler:
 - CSS :balloon:
-- SASS :balloon
+- SASS :balloon:
 - JS :crystal_ball:
 
 Para la codificación, mi edidor de codigo preferido, <b>Visual Studio Code</b>. :star:
@@ -34,10 +34,10 @@ Para la codificación, mi edidor de codigo preferido, <b>Visual Studio Code</b>.
 
 Para la elaboración del proyecto fueron influyentes:
 
-- JonMircha -> Ayuda en Comsumir Api.
+- JonMircha -> Ayuda/Taller en Consumir Api.
 
 <h2>Agradecimiento...</h2>
 
-Por ultimo me gustaria agradecer por la oprtunidad, he tenido varias pruebas ya y siento que he mejorado gracias a ellas.
+Por ultimo me gustaria agradecer por la oprtunidad, he tenido varias pruebas y siento que he mejorado gracias a ellas.
 Se que cometo errores que no puedo solucionar aún pero eso en parte bueno, no saber el porqué de esos erores me lleva a estudiar más, cosa que hago todos los días.
 Muchas gracias, quedo al pendiente a cualquier respuesta.
