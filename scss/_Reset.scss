@@ -2,8 +2,7 @@
 /***********Reseteo global de etiquetas, no uso normalize. Intento ser minimalista y usar CSS puro.****************/
 html {
   box-sizing: border-box;
-  font-family: "Alata", sans-serif;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Akaya Telivigala", cursive;
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -17,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: map-get($colores, "bg-primary");
+  background-color: map-get($colores, "wiithe");
   transition: background-color 600ms linear, color 600ms linear;
 }
 .dark {

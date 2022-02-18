@@ -1,0 +1,44 @@
+.contador {
+  color: map-get($colores, "black");
+  .container {
+    padding: 1.5rem;
+    background-image: linear-gradient();
+    color: map-get($colores, "black");
+    font-size: var(--step-0);
+    @include flex();
+    gap: 1rem;
+    &__title {
+      text-decoration: underline;
+    }
+    &__span {
+      font-size: 4rem;
+    }
+    &__boton {
+      min-width: 180px;
+      margin: 0 auto;
+      padding: 0.8rem;
+      border: 1px solid map-get($colores, "text-color");
+      font-size: var(--step--1);
+      font-weight: bold;
+      text-align: center;
+
+      &:active {
+        background-color: map-get($colores, "light-gray");
+      }
+    }
+    body.dark & {
+      color: map-get($colores, "white");
+      &__boton {
+        background-color: map-get($colores, "light-gray");
+        color: map-get($colores, "white");
+      }
+    }
+  }
+}
+//MediaQuerie CONTADOR.
+@media screen and (min-width: 64em) {
+  .contador {
+    .container {
+    }
+  }
+}

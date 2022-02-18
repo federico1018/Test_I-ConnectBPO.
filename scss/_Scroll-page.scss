@@ -1,0 +1,47 @@
+.scroll-page {
+  position: absolute;
+  position: fixed;
+  z-index: 999;
+  bottom: 8px;
+  left: 8px;
+  padding: 0.5rem;
+  width: 60px;
+  height: 34px;
+  @include flex($direction: row, $just: space-between);
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: map-get($colores, "light-gray");
+  //ENLACES
+  &__enlace {
+    //SVG-1
+    svg {
+      animation: bounce-down 1s linear infinite alternate;
+    }
+    @keyframes bounce-down {
+      0% {
+        transform: translateY(5%);
+      }
+      100% {
+        transform: translateY(40%);
+      }
+    }
+    //SVG-2
+    .svg-up {
+      animation: bounce-up 1s linear infinite alternate;
+    }
+    @keyframes bounce-up {
+      0% {
+        transform: translateY(5%);
+      }
+      100% {
+        transform: translateY(-40%);
+      }
+    }
+  }
+  //CAMBIO DE PROPIEDADES PARA DARK-MODE
+  body.dark & {
+    svg {
+      color: map-get($colores, "white");
+    }
+  }
+}

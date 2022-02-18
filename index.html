@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Fuentes Usadas-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
     <!--Titulo Pagina-->
     <title>Test_I-ConnectBPO.</title>
     <!--Enlaces Css/Js-->
@@ -16,7 +19,7 @@
 
 <body>
     <!--HEADER-MENU-->
-    <header class="header">
+    <header class="header" id="up">
         <!--BTN_Dark-Mode-->
         <button class="dark-mode" id="switch">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -46,16 +49,59 @@
             <!--Nav-->
             <nav class="menu">
                 <a class="menu__enlace" href="#">Bienvenido</a>
-                <a class="menu__enlace" href="#">Musica</a>
+                <a class="menu__enlace" href="#api">Musica</a>
                 <!--Logo-->
                 <a class="menu__logo" href="https://www.instagram.com/aldana_1.8/" target="_blank">
                     <img src="/assets/LogoFede.jpg" alt="LogoFede">
                 </a>
-                <a class="menu__enlace" href="#">Contador</a>
-                <a class="menu__enlace" href="#">Contacto</a>
+                <a class="menu__enlace" href="#contador">Contador</a>
+                <a class="menu__enlace" href="#contact">Contacto</a>
             </nav>
         </section>
     </header>
+
+    <!--API-PUBLICA-->
+    <main class="api-public" id="api">
+        <div class="container">
+
+        </div>
+    </main>
+
+    <!--CONTADOR-JUEGO-->
+    <section class="contador" id="contador">
+        <div class="container">
+            <h2 class="container__title">ContadorGG</h2>
+            <span class="container__span" id="valor">0</span>
+            <button class="container__boton boton disminuir">Disminuir</button>
+            <button class="container__boton boton resetear">Resetear</button>
+            <button class="container__boton boton aumentar">Aumentar</button>
+        </div>
+    </section>
+
+    <!--CONTACTO-FORM-->
+    <footer class="contacto" id="contact">
+        <div class="container">
+
+        </div>
+    </footer>
+
+    <!--Botonos Desplazamiento SCROLL-->
+    <div class="scroll-page">
+        <a href="#" class="scroll-page__enlace ">
+            <svg class="svg-up" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path
+                    d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+            </svg>
+        </a>
+        <a href="#contact" class="scroll-page__enlace">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path
+                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
+        </a>
+    </div>
 </body>
 
 </html>

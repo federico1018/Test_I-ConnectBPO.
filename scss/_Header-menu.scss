@@ -9,10 +9,11 @@
   .dark-mode {
     position: relative;
     position: fixed;
+    z-index: 999;
     padding: 0.5rem;
     width: 60px;
-    bottom: 10px;
-    right: 10px;
+    bottom: 8px;
+    right: 8px;
     background-color: map-get($colores, "light-gray");
     border: none;
     cursor: pointer;
@@ -40,18 +41,19 @@
       background: none;
       color: map-get($colores, "white");
     }
-  }
-  .active {
-    background-color: map-get($colores, "light-gray");
-    color: map-get($colores, "light-gray");
-    svg {
-      color: map-get($colores, "bg-btn-mode");
+    &.active {
+      background-color: map-get($colores, "light-gray");
+      color: map-get($colores, "light-gray");
+      svg {
+        color: map-get($colores, "bg-btn-mode");
+      }
+      &::after {
+        right: 2px;
+        left: unset;
+      }
     }
-    &::after {
-      right: 2px;
-      left: unset;
-    }
   }
+
   //Container LOGO/NAV
   .container {
     @include flex($direction: row, $just: space-between);
@@ -87,7 +89,7 @@
         margin: 0 auto;
         padding: 0.8rem;
         border: 1px solid map-get($colores, "text-color");
-        font-size: var(--step--1);
+        font-size: var(--step-0);
         font-weight: bold;
         text-align: center;
         overflow: hidden;
