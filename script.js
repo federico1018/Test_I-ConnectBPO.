@@ -38,7 +38,8 @@ botones.forEach((boton) => {
 /*CONSUMIENDO API POKEMON PUBLICA*/
 /***********************Script POKÉAPI**************************/
 
-//Variables DOM.
+//Variables DOM DATA.
+//Para cargar los datos hacia las etiquetas HTML-DATA.
 const pokeCard = document.querySelector("[data-poke-card]");
 const pokeName = document.querySelector("[data-poke-name]");
 const pokeImg = document.querySelector("[data-poke-img]");
@@ -47,7 +48,7 @@ const pokeId = document.querySelector("[data-poke-id]");
 const pokeTypes = document.querySelector("[data-poke-types]");
 const pokeStats = document.querySelector("[data-poke-stats]");
 
-//
+//Este Pbjeto tiene por defecto colores para usar en cada tipo de pokemon segun su estilo.
 const typeColors = {
   electric: "#FFEA70",
   normal: "#B09398",
@@ -68,7 +69,7 @@ const typeColors = {
   default: "#2A1A1F",
 };
 
-//
+//Funcion para llamar a los pokemon desde la api.
 const searchPokemon = (event) => {
   event.preventDefault();
   const { value } = event.target.pokemon;
@@ -78,7 +79,6 @@ const searchPokemon = (event) => {
     .catch((err) => renderNotFound());
 };
 
-//
 const renderPokemonData = (data) => {
   const sprite = data.sprites.front_default;
   const { stats, types } = data;
@@ -91,7 +91,6 @@ const renderPokemonData = (data) => {
   renderPokemonStats(stats);
 };
 
-//
 const setCardColor = (types) => {
   const colorOne = typeColors[types[0].type.name];
   const colorTwo = types[1]
@@ -101,7 +100,6 @@ const setCardColor = (types) => {
   pokeImg.style.backgroundSize = " 5px 5px";
 };
 
-//
 const renderPokemonTypes = (types) => {
   pokeTypes.innerHTML = "";
   types.forEach((type) => {
@@ -112,7 +110,6 @@ const renderPokemonTypes = (types) => {
   });
 };
 
-//
 const renderPokemonStats = (stats) => {
   pokeStats.innerHTML = "";
   stats.forEach((stat) => {
@@ -127,7 +124,6 @@ const renderPokemonStats = (stats) => {
   });
 };
 
-//
 const renderNotFound = () => {
   pokeName.textContent = "No encontrado";
   pokeImg.setAttribute("src", "poke-shadow.png");
