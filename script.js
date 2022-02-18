@@ -1,5 +1,3 @@
-/*Use Vanilla.Js para lograr la interración con el Menu Mobile.*/
-
 /* ********** Menu_Mobile ********** */
 ((d) => {
   const $btnMenu = d.querySelector(".menu-btn"),
@@ -19,3 +17,12 @@
     $menu.classList.remove("is-active");
   });
 })(document);
+
+/* *************Script_DARK-MODE************** */
+const $dark = document.getElementById("switch");
+console.log($dark);
+
+$dark.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  $dark.classList.toggle("active");
+});
