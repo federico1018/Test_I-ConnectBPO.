@@ -21,11 +21,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  transition: background-color 600ms linear, color 600ms linear;
+  background-color: #ebe7e7;
+  transition: all 600ms linear, color 600ms linear;
 }
 
 .dark {
-  background-color: black;
+  background-color: #1f1f1f;
 }
 
 img {
@@ -86,9 +87,12 @@ h5 {
 .header {
   position: sticky;
   top: 0;
-  z-index: 900;
   padding: 1.5rem;
-  width: 100%;
+  background-color: #ebe7e7;
+  transition: all 600ms linear, color 600ms linear;
+}
+body.dark .header {
+  background-color: #1f1f1f;
 }
 .header .dark-mode {
   position: relative;
@@ -98,7 +102,7 @@ h5 {
   width: 60px;
   bottom: 8px;
   right: 8px;
-  background-color: #5a5a5a;
+  background-color: #444444;
   border: none;
   cursor: pointer;
   border-radius: 10px;
@@ -114,7 +118,7 @@ h5 {
   width: 30px;
   height: 30px;
   position: absolute;
-  background-color: #b2c5ee;
+  background-color: #1f1f1f;
   top: 2px;
   left: 2px;
   right: unset;
@@ -127,14 +131,11 @@ h5 {
   line-height: 18px;
   display: block;
   background: none;
-  color: white;
+  color: #ebe7e7;
 }
 .header .dark-mode.active {
-  background-color: #5a5a5a;
-  color: #5a5a5a;
-}
-.header .dark-mode.active svg {
-  color: #ffa500;
+  background-color: #444444;
+  color: #444444;
 }
 .header .dark-mode.active::after {
   right: 2px;
@@ -143,54 +144,43 @@ h5 {
 .header .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  background-color: #ebe7e7;
+  transition: all 600ms linear, color 600ms linear;
 }
-.header .container .menu-btn {
-  outline: thin solid #5a5a5a;
-  border: 0;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  background-color: #5a5a5a;
-}
-body.dark .header .container .menu-btn {
-  background-color: #b2c5ee;
+body.dark .header .container {
+  background-color: #1f1f1f;
 }
 .header .container .menu {
-  position: fixed;
-  left: 0;
-  top: 5rem;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
 }
 .header .container .menu__enlace {
   z-index: 99;
   display: inline;
   position: relative;
-  min-width: 180px;
-  margin: 0 auto;
+  min-width: 120px;
   padding: 0.8rem;
   border: 1px solid #444444;
   font-size: var(--step-0);
   font-weight: bold;
   text-align: center;
   overflow: hidden;
-  color: #444444;
+  color: #1f1f1f;
   transition: color 900ms 300ms;
   -webkit-transition: color 800ms ease-out;
   -moz-transition: color 900ms ease-out;
   -ms-transition: color 900ms ease-out;
   -o-transition: color 900ms ease-out;
 }
-.header .container .menu__enlace:hover {
-  color: white;
+body.dark .header .container .menu__enlace {
+  color: #ebe7e7;
 }
 .header .container .menu__enlace::after {
   content: "";
@@ -224,30 +214,24 @@ body.dark .header .container .menu-btn {
   pointer-events: auto;
 }
 
-@media screen and (min-width: 64em) {
-  .header .container .menu-btn {
-    display: none;
-  }
+[id] {
+  scroll-margin-top: 15rem;
+}
+
+@media screen and (min-width: 44.026em) {
   .header .container .menu {
-    margin: 0 auto;
-    position: static;
-    max-width: 700px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .header .container .menu__enlace {
-    width: auto;
-    padding: 8px;
-  }
-  .header .container .menu__enlace:last-child {
-    padding-right: 0;
   }
   .header .container .menu__logo {
     order: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  [id] {
+    scroll-margin-top: 20rem;
   }
 }
 .api-public .container {
@@ -255,12 +239,12 @@ body.dark .header .container .menu-btn {
 }
 
 .contador {
-  color: black;
+  color: #1f1f1f;
 }
 .contador .container {
   padding: 1.5rem;
   background-image: linear-gradient();
-  color: black;
+  color: #1f1f1f;
   font-size: var(--step-0);
   display: flex;
   flex-direction: column;
@@ -270,6 +254,10 @@ body.dark .header .container .menu-btn {
 }
 .contador .container__title {
   text-decoration: underline;
+  animation: none;
+}
+.contador .container__paragraph {
+  margin: 0;
 }
 .contador .container__span {
   font-size: 4rem;
@@ -279,28 +267,72 @@ body.dark .header .container .menu-btn {
   margin: 0 auto;
   padding: 0.8rem;
   border: 1px solid #444444;
+  background-color: #ebe7e7;
   font-size: var(--step--1);
   font-weight: bold;
   text-align: center;
 }
 .contador .container__boton:active {
-  background-color: #5a5a5a;
+  background-color: #444444;
 }
 body.dark .contador .container {
-  color: white;
+  color: #ebe7e7;
 }
 body.dark .contador .container__boton {
-  background-color: #5a5a5a;
-  color: white;
+  background-color: #444444;
+  color: #ebe7e7;
 }
 
+@media screen and (min-width: 64em) {
+  .contador .container__title {
+    animation: shake 2s ease infinite alternate;
+  }
+  @keyframes shake {
+    10%, 90% {
+      transform: translateX(-1px);
+    }
+    20%, 80% {
+      transform: translateX(2px);
+    }
+    30%, 50%, 70% {
+      transform: translateX(-4px);
+    }
+    40%, 60% {
+      transform: translateX(4px);
+    }
+  }
+}
 .contacto {
-  background-color: red;
+  margin: 4rem 0;
 }
-.contacto .container {
-  background-color: hotpink;
+.contacto .container .nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.contacto .container .nav-container .container-red {
+  font-size: var(--step-0);
+  color: #444444;
+}
+.contacto .container .nav-container .container-red:hover {
+  text-decoration: underline;
+}
+body.dark .contacto .container .nav-container .container-red {
+  color: #ebe7e7;
 }
 
+@media screen and (min-width: 64em) {
+  .contacto .container .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/*Estos son los botones para poder hacer el desplazamiento hacia arriba u abajo, yo lo hice de esta forma.
+Claramente no se si es la mejor pero lo hice.*/
 .scroll-page {
   position: absolute;
   position: fixed;
@@ -316,7 +348,6 @@ body.dark .contador .container__boton {
   align-items: center;
   cursor: pointer;
   border-radius: 10px;
-  background-color: #5a5a5a;
 }
 .scroll-page__enlace svg {
   animation: bounce-down 1s linear infinite alternate;
@@ -341,7 +372,7 @@ body.dark .contador .container__boton {
   }
 }
 body.dark .scroll-page svg {
-  color: white;
+  color: #ebe7e7;
 }
 
 /*Este metodo para Textos fluidos me ha gustado utilizar, espero no sea un problema..*/

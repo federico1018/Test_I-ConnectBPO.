@@ -16,8 +16,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: map-get($colores, "wiithe");
-  transition: background-color 600ms linear, color 600ms linear;
+  background-color: map-get($colores, "white");
+  transition: all 600ms linear, color 600ms linear;
 }
 .dark {
   background-color: map-get($colores, "black");

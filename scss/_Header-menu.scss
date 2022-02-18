@@ -2,9 +2,12 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 900;
   padding: 1.5rem;
-  width: 100%;
+  background-color: map-get($colores, "white");
+  transition: all 600ms linear, color 600ms linear;
+  body.dark & {
+    background-color: map-get($colores, "black");
+  }
   //BTN-DARK-MODE
   .dark-mode {
     position: relative;
@@ -14,7 +17,7 @@
     width: 60px;
     bottom: 8px;
     right: 8px;
-    background-color: map-get($colores, "light-gray");
+    background-color: map-get($colores, "text-color");
     border: none;
     cursor: pointer;
     border-radius: 10px;
@@ -26,7 +29,7 @@
       width: 30px;
       height: 30px;
       position: absolute;
-      background-color: map-get($colores, "bg-primary");
+      background-color: map-get($colores, "black");
       top: 2px;
       left: 2px;
       right: unset;
@@ -42,11 +45,9 @@
       color: map-get($colores, "white");
     }
     &.active {
-      background-color: map-get($colores, "light-gray");
-      color: map-get($colores, "light-gray");
-      svg {
-        color: map-get($colores, "bg-btn-mode");
-      }
+      background-color: map-get($colores, "text-color");
+      color: map-get($colores, "text-color");
+
       &::after {
         right: 2px;
         left: unset;
@@ -56,50 +57,36 @@
 
   //Container LOGO/NAV
   .container {
-    @include flex($direction: row, $just: space-between);
-    //Menu Mobile/Hamburguesa
-    .menu-btn {
-      outline: thin solid map-get($colores, "light-gray");
-      border: 0;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      background-color: map-get($colores, "light-gray");
-      //Este selectro me permite cambiar aspectos unicos de la sección menu-mobile cuando la pagina se encuentre en MODO-OSCURO.
-      //Si quiero modificar cualquier otro modulo de mi pagina es ir a ese fragmento y colocar este mismo selector.
-      body.dark & {
-        background-color: map-get($colores, "bg-primary");
-      }
+    @include flex($direction: row, $just: space-around);
+    background-color: map-get($colores, "white");
+    transition: all 600ms linear, color 600ms linear;
+    body.dark & {
+      background-color: map-get($colores, "black");
     }
     //Menu MOBILE-FIRST
     .menu {
-      position: fixed;
-      left: 0;
-      top: 5rem;
       width: 100%;
-      @include flex();
+      @include flex($direction: row);
+      flex-wrap: wrap;
       gap: 1rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
       &__enlace {
         z-index: 99;
         display: inline;
         position: relative;
-        min-width: 180px;
-        margin: 0 auto;
+        min-width: 120px;
         padding: 0.8rem;
         border: 1px solid map-get($colores, "text-color");
         font-size: var(--step-0);
         font-weight: bold;
         text-align: center;
         overflow: hidden;
-        color: map-get($colores, "text-color");
+        color: map-get($colores, "black");
         transition: color 900ms 300ms;
         -webkit-transition: color 800ms ease-out;
         -moz-transition: color 900ms ease-out;
         -ms-transition: color 900ms ease-out;
         -o-transition: color 900ms ease-out;
-        &:hover {
+        body.dark & {
           color: map-get($colores, "white");
         }
         //Animación Nav
@@ -139,31 +126,25 @@
     }
   }
 }
-//MediaQuerie MENU DEKTOP.
-@media screen and (min-width: 64em) {
+[id] {
+  scroll-margin-top: 15rem;
+}
+//MediaQuerie DESKTOP.
+@media screen and (min-width: 44.026em) {
   .header {
     .container {
-      .menu-btn {
-        display: none;
-      }
       .menu {
-        margin: 0 auto;
-        position: static;
-        max-width: 700px;
-        @include flex($direction: row);
-        opacity: 1;
-        pointer-events: auto;
-        &__enlace {
-          width: auto;
-          padding: 8px;
-          &:last-child {
-            padding-right: 0;
-          }
-        }
+        @include flex($direction: row, $just: space-between);
         &__logo {
           order: 0;
         }
       }
     }
+  }
+}
+//MediaQuerieScrollMarginTop.
+@media screen and (max-width: 320px) {
+  [id] {
+    scroll-margin-top: 20rem;
   }
 }

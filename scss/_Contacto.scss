@@ -1,6 +1,29 @@
 .contacto {
-  background-color: red;
+  margin: 4rem 0;
   .container {
-    background-color: hotpink;
+    .nav-container {
+      @include flex();
+      gap: 1rem;
+      .container-red {
+        font-size: var(--step-0);
+        color: map-get($colores, "text-color");
+        &:hover {
+          text-decoration: underline;
+        }
+        body.dark & {
+          color: map-get($colores, "white");
+        }
+      }
+    }
+  }
+}
+//MediaQuerie CONATCTO.
+@media screen and (min-width: 64em) {
+  .contacto {
+    .container {
+      .nav-container {
+        @include flex($direction: row);
+      }
+    }
   }
 }
