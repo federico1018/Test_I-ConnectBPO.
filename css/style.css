@@ -25,6 +25,7 @@ body {
   transition: all 600ms linear, color 600ms linear;
 }
 
+/*ESTA CLASE CAMBIA POR COMPLETO LA PAGINA WEB A MODO DARK. */
 .dark {
   background-color: #1f1f1f;
 }
@@ -235,9 +236,57 @@ body.dark .header .container .menu__enlace {
   }
 }
 .api-public .container {
-  padding: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: var(--step-1);
+  color: #444444;
 }
-
+body.dark .api-public .container {
+  color: #ebe7e7;
+}
+.api-public .container .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.api-public .container .form__input {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: var(--step--1);
+  text-decoration: none;
+  text-align: center;
+  color: #444444;
+  background-color: #ebe7e7;
+}
+body.dark .api-public .container .form__input {
+  color: #ebe7e7;
+  background-color: #1f1f1f;
+}
+.api-public .container .pokedex-card {
+  max-width: 50%;
+  min-width: 70%;
+  padding: 1rem 0;
+  text-align: center;
+  border: 3px solid #1f1f1f;
+  box-shadow: 8px 8px 8px 10px #444444;
+}
+@media screen and (min-width: 55em) {
+  .api-public .container {
+    width: 50%;
+  }
+  .api-public .container .pokedex-card {
+    max-width: 10vw;
+  }
+}
 .contador {
   color: #1f1f1f;
 }
@@ -302,6 +351,7 @@ body.dark .contador .container__boton {
     }
   }
 }
+/*Decidi colocar un pequeño FOOTER con mis redes, perdon si no hacia parte de la prueba.*/
 .contacto {
   margin: 4rem 0;
 }

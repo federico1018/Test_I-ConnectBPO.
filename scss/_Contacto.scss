@@ -1,9 +1,11 @@
+/*Decidi colocar un pequeño FOOTER con mis redes, perdon si no hacia parte de la prueba.*/
 .contacto {
   margin: 4rem 0;
   .container {
     .nav-container {
       @include flex();
       gap: 1rem;
+      //Container de cada RED.
       .container-red {
         font-size: var(--step-0);
         color: map-get($colores, "text-color");

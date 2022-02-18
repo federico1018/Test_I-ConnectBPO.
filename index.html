@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icon-->
+    <link rel="shortcut icon" href="/assets/LogoFede.jpg" type="image/x-icon">
     <!--Fuentes Usadas-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +39,7 @@
             <!--Nav-->
             <nav class="menu">
                 <a class="menu__enlace" href="#">Bienvenido</a>
-                <a class="menu__enlace" href="#api">Musica</a>
+                <a class="menu__enlace" href="#api">Pokedex</a>
                 <!--Logo-->
                 <a class="menu__logo" href="https://www.instagram.com/aldana_1.8/" target="_blank">
                     <img src="/assets/LogoFede.jpg" alt="LogoFede">
@@ -50,9 +52,25 @@
 
     <!--API-PUBLICA-->
     <main class="api-public" id="api">
-        <div class="container">
-
-        </div>
+        <section class="container">
+            <!--Search Pokedex-->
+            <form class="form" action="" onsubmit="searchPokemon(event)">
+                <span>¿Cuantos Pokemon recuerdas?</span>
+                <input class="form__input" type="text" name="pokemon" autocomplete="off" placeholder="¿..?🔎">
+            </form>
+            <!--Body PokeCard-->
+            <article data-poke-card class="pokedex-card">
+                <header data-poke-name>Pokedex</header>
+                <!--Poke Img-->
+                <div data-poke-img-container class="pokedex-img">
+                    <img data-poke-img class="pokedex-img__img" src="/assets/poke-error.png" />
+                </div>
+                <!--Pokemon Data-->
+                <div data-poke-id></div>
+                <div data-poke-types class="pokedex-types"></div>
+                <div data-poke-stats class="pokedex-stats"></div>
+            </article>
+        </section>
     </main>
 
     <!--CONTADOR-JUEGO-->

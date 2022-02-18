@@ -19,6 +19,7 @@ body {
   background-color: map-get($colores, "white");
   transition: all 600ms linear, color 600ms linear;
 }
+/*ESTA CLASE CAMBIA POR COMPLETO LA PAGINA WEB A MODO DARK. */
 .dark {
   background-color: map-get($colores, "black");
   color: map-get($colores, "withe");
